@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- ficha trabalho1-exercicio2.pdf -->
+
+<body>
+    <div id="app">
+        <h1 :title="arepa">Desenvolvimento WEB :. saber o mês</h1>
+        <br>
+        <input type="text" v-model="mes">
+        <button @click='saber(mes)'>saber mês</button>
+        <h3>{{resultado}}</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        var aplicacao = new Vue
+        ({
+            el: '#app',
+            data: {
+                mes: 0,
+                texto: 'insira numero do mês',
+                resultado: null
+            },
+            methods: {
+                saber: function (a) {
+                    numero=parseInt(a);
+                    var meses=["Janeiro", "Fevereiro", "Março", "Abril",
+                               "Maio", "Junho", "Julho", "Agosto",
+                               "Setembro", "Outubro", "Novembro", "Dezembro"]
+                    this.resultado=meses[numero-1];
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- ficha02-01.pdf -->
+
+<body>
+    <div id="app">
+        <h1 :title="arepa">Desenvolvimento WEB</h1>
+        <br>
+        <h3>{{numero}}</h3>
+        {{ numero>9?'aprovado':'reprovado' }}
+
+        <br>
+        <br>
+        Nota1 <input type="nota1" v-model="nota1">
+        <br>
+        Nota2 <input type="nota2" v-model="nota2">
+        <button @click='media(nota1, nota2)'>soma</button>
+
+        <!-- <input type="text" v-model="texto"> -->
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                nota1: '',
+                nota2: '',
+                disciplina: 'frontend',
+                numero: 0
+            },
+            methods: {
+                media: function (a,b) {
+                    this.numero=(parseInt(a) + parseInt(b))
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- ficha trabalho1-exercicio2.pdf -->
+
+<body>
+    <div id="app">
+        <h1 :title="arepa">Desenvolvimento WEB :. efetua operações</h1>
+        <!-- <h1>{{texto}}</h1> -->
+        <br>
+        <input type="text" v-model="n1">
+        <input type="text" v-model="n2">
+
+        <button @click='soma(n1,n2)'>Soma</button>
+        <button @click='subtrai(n1,n2)'>Subtrai</button>
+        <button @click='divide(n1,n2)'>Divide</button>
+        <button @click='multiplica(n1,n2)'>Multiplica</button>
+        <button @click='elevado(n1,n2)'>Elevado</button>
+        <br>
+
+        <h3>{{resultado}}</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    
+    
+    <script>
+        var aplicacao = new Vue
+        ({
+            el: '#app',
+            data: {
+                n1: 0,
+                n2: 0,
+                texto: 'insira dois numeros',
+                resultado: null
+            },
+            methods: {
+                soma: function (a,b) {
+                    this.resultado=parseInt(a) + parseInt(b);
+                },
+                subtrai: function (a,b) {
+                    this.resultado=parseInt(a) - parseInt(b);
+                },
+                divide: function (a,b) {
+                    this.resultado=parseInt(a) / parseInt(b);
+                },
+                multiplica: function (a,b) {
+                    this.resultado=parseInt(a) * parseInt(b);
+                },
+                elevado: function (a,b) {
+                    this.resultado= Math.pow(parseInt(a),parseInt(b));
+                },
+            
+            }
+        })
+    </script>
+
+</body>
+
+</html>

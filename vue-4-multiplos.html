@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- ficha trabalho1-exercicio2.pdf -->
+
+<body>
+    <div id="app">
+   
+        <br>
+        <button @click='calcula'>Calcula</button>
+        <br>
+
+        <h3>{{resultado}}</h3>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    
+    
+    <script>
+        var aplicacao = new Vue
+        ({
+            el: '#app',
+            data: {
+               resultado:[]
+            },
+            methods: {
+                calcula: function () {
+                    var multiplo = 1;
+                    var i = 1;
+                    while (multiplo < 20)
+                    {
+                    multiplo=5*i
+                    i+=1;
+                    this.resultado.push(multiplo)
+                    }
+                }
+            }
+        })
+    </script>
+
+</body>
+
+</html>
