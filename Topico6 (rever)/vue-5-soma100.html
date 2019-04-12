@@ -12,7 +12,8 @@
 
 <body>
     <div id="app">
-   
+        <h1>Desenvolvimento WEB :. soma 100</h1>
+
         <br>
         <button @click='calcula'>Calcula</button>
         <br>
@@ -20,28 +21,26 @@
         <h3>{{resultado}}</h3>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
-    
-    
+
+
     <script>
         var aplicacao = new Vue
-        ({
-            el: '#app',
-            data: {
-               resultado:[]
-            },
-            methods: {
-                calcula: function () {
-                    var multiplo = 1;
-                    var i = 1;
-                    while (multiplo < 20)
-                    {
-                    multiplo=5*i
-                    i+=1;
-                    this.resultado.push(multiplo)
+            ({
+                el: '#app',
+                data: {
+                    resultado: null
+                },
+
+                methods: {
+                    calcula: function () {
+                        var retornar = 0;
+                        for (i = 0; i < 101; i++) {
+                            retornar += i;
+                            }
+                        this.resultado=retornar
                     }
                 }
-            }
-        })
+            })
     </script>
 
 </body>

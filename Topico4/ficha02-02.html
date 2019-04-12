@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ficha02-02</title>
+</head>
+
+<body>
+<!--     <div id="app">
+        {{titulo}}
+    </div> -->
+    <div id="app">
+        <h2>Lista de Tarefas</h2>
+        <input type="text" placeholder="insira uma nova tarefa" v-model="novaTarefa">
+        <button @click="inseretarefa">Inserir Tarefa</button>    
+<ul>
+    <li v-for="item in tarefas">{{ item }}</li>
+</ul>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+    <script>
+        new Vue({
+            el: '#app',
+            data: {
+                titulo: 'Hello World',
+                novaTarefa:'',
+                tarefas: [
+                    'Exercicios de HTML e CSS',
+                    'Exercicios de Javascript',
+                    'Exercicios de VueJS',
+                    'Exercicios de Angular',
+                    'Juntar tudo no Projeto Toolbox',
+                ]
+            },
+            methods:{
+                inseretarefa: function(){
+                    if(!!this.novaTarefa){
+                        this.tarefas.push(this.novaTarefa)
+                        this.novaTarefa=''
+                    }
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

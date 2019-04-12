@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- ficha trabalho1-exercicio2.pdf -->
+
+<body>
+    <div id="app">
+        <h1>Desenvolvimento WEB :. efetua operações</h1>
+        <!-- <h1>{{texto}}</h1> -->
+        <br>
+
+        <button @click='minimo'>Minimo</button>
+        <button @click='maximo'>Maximo</button>
+        <button @click='media'>Média</button>
+        <br>
+
+        <h3>Menor: {{min}}</h3>
+        <h3>Maior: {{max}}</h3>
+        <h3>Média: {{med}}</h3>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+
+
+    <script>
+        var aplicacao = new Vue
+            ({
+                el: '#app',
+                data: {
+                    array: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+                    min: null,
+                    max: null,
+                    med: null
+                },
+                methods: {
+                    minimo: function () {
+                        var menor = this.array[9]
+                        var size = this.array.length;
+                        for (i = 0; i > size; i++) {
+                            if (this.array[i] < menor) {
+                                menor = this.array[i];
+                            }
+                        }
+                        this.min = menor;
+                    },
+                    maximo: function () {
+                        var maior = this.array[0]
+                        var size = this.array.length;
+                        for (i = 0; i < size; i++) {
+                            if (this.array[i] > maior) {
+                                maior = this.array[i];
+                            }
+                        }
+                        this.max = maior;
+                    },
+                    media: function (){
+                        var size = this.array.length;
+                        var soma = 0;
+                        for (i = 0; i < size; i++) {
+                            soma += this.array[i]
+                        }
+                        this.med = soma / size
+                    }
+
+
+                }
+            })
+    </script>
+
+</body>
+
+</html>
