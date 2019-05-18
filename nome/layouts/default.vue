@@ -1,7 +1,8 @@
 <template>
   <div>
+      <TheSidenav :show="displaySidenav" @close="displaySidenav=false"/>
     <TheHeader @sidenavToggle="displaySidenav = !displaySidenav"/>
-    <TheSidenav :show="displauSidenav" @close="displaySidenav=false"/>
+
     <nuxt/>
   </div>
 </template>
@@ -33,4 +34,5 @@ body {
 .margin-content {
   margin-top: 4.5rem;
 }
+
 </style>

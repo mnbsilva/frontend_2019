@@ -1,8 +1,8 @@
 <template>
 <div>
-    <header class="main-header">
-        <div>
-            
+    <header class="main-header corrige-header">
+
+        <TheSideNavToggle @toggle="$emit('sidenavToggle')" />    
         <nav class="main-nav">
             <ul class="nav-links">
                 <nuxt-link to="/" tag="li" class="nav-link"><a>All Posts</a></nuxt-link>
@@ -10,8 +10,8 @@
             </ul>
         </nav>
 
-        </div>
-        <TheSideNavToggle @toggle="$emit('sidenavToggle')" />
+        
+        
     </header>
 </div>
 </template>
@@ -78,4 +78,10 @@ export default {
     .nav-link.nuxt-link-exact-active {
         border-bottom: 3px solid #06c4d1;
     }
+    .corrige-header{
+  display:flex;
+  padding:0 30px;
+  justify-content: space-between;
+  align-items: center;
+}
 </style>

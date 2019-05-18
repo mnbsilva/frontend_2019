@@ -3,7 +3,7 @@
     <div v-if="show" class="sidenav-backdrop" @click="$emit('close')"></div>
     <transition name="slide-side">
         <div v-if="show" class="sidenav">
-            <ul class="nav-list" @click="$emait('close')">
+            <ul class="nav-list" @click="$emit('close')">
                 <li class="nav-item">...</li>
                 <li class="nav-item">...</li>
                 <li class="nav-item">...</li>
@@ -22,6 +22,7 @@
     height: 100%;
     background-color: rgba(0, 0, 0, 0.7);
     z-index: 1000;
+    position: fixed;
     top: 0;
     left: 0;
 }

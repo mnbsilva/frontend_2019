@@ -1,2 +1,0 @@
-cd nome
-npm run dev
